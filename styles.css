@@ -112,3 +112,24 @@ main {
     }
   }
 }
+
+@media (max-width: 1010px) {
+  #header input,
+  main .blog-section {
+    width: 70rem;
+  }
+}
+
+@media (max-width: 715px) {
+  #header input,
+  main .blog-section {
+    width: 50rem;
+  }
+}
+
+@media (max-width: 520px) {
+  #header input,
+  main .blog-section {
+    width: 35rem;
+  }
+}
