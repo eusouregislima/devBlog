@@ -74,13 +74,12 @@ reversedData.forEach((item) => {
 const icon = document.querySelectorAll("#icon");
 
 icon.forEach((icon) => {
-  icon.addEventListener("click", () => {
+  icon.addEventListener("click", (event) => {
     icon.classList.toggle("filled");
 
-    // Obtendo as coordenadas x e y do ícone
-    const iconRect = icon.getBoundingClientRect();
-    const iconX = iconRect.x + window.scrollX;
-    const iconY = iconRect.y + window.scrollY;
+    // Obtendo as coordenadas x e y do ícone considerando o scroll
+    const iconX = event.pageX - window.scrollX;
+    const iconY = event.pageY - window.scrollY;
 
     // função confeti -> adicionado script
     confetti({
