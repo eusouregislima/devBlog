@@ -77,16 +77,19 @@ icon.forEach((icon) => {
   icon.addEventListener("click", (event) => {
     icon.classList.toggle("filled");
 
-    // Obtendo as coordenadas x e y do ícone considerando o scroll
-    const iconX = event.pageX - window.scrollX;
-    const iconY = event.pageY - window.scrollY;
+    // confeti somente para o like
+    if (icon.classList.contains("filled")) {
+      // Obtendo as coordenadas x e y do ícone considerando o scroll
+      const iconX = event.pageX - window.scrollX;
+      const iconY = event.pageY - window.scrollY;
 
-    // função confeti -> adicionado script
-    confetti({
-      particleCount: 100,
-      spread: 100,
-      origin: { x: iconX / window.innerWidth, y: iconY / window.innerHeight },
-    });
+      // função confeti -> adicionado script
+      confetti({
+        particleCount: 100,
+        spread: 100,
+        origin: { x: iconX / window.innerWidth, y: iconY / window.innerHeight },
+      });
+    }
   });
 });
 
