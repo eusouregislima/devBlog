@@ -76,6 +76,18 @@ const icon = document.querySelectorAll("#icon");
 icon.forEach((icon) => {
   icon.addEventListener("click", () => {
     icon.classList.toggle("filled");
+
+    // Obtendo as coordenadas x e y do ícone
+    const iconRect = icon.getBoundingClientRect();
+    const iconX = iconRect.x + window.scrollX;
+    const iconY = iconRect.y + window.scrollY;
+
+    // função confeti -> adicionado script
+    confetti({
+      particleCount: 100,
+      spread: 100,
+      origin: { x: iconX / window.innerWidth, y: iconY / window.innerHeight },
+    });
   });
 });
 
